@@ -330,7 +330,53 @@ nav li:nth-child(4) a {
     font-weight: 600;
     color: #A7AAAD;
 }
-
+/* IMAGE GALLERY */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+footer {
+    background-color: #90D4C6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 39px 80px 39px;
+}
+footer svg {
+    margin-bottom: 40px;
+}
+footer svg path {
+    fill: #2C7566;
+}
+footer .footer-links {
+    margin-bottom: 91px;
+}
+.footer-links ul {
+    display: flex;
+    flex-direction: row;
+}
+.footer-links li {
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #458D7E;
+}
+.footer-links ul li:nth-child(2) {
+    margin: 0 58px;
+}
+footer .social-icons {
+    display: flex;
+    flex-direction: row;
+}
+.social-icons svg:nth-child(2) {
+    margin-left: 28px;
+    margin-right: 28px;
+}
+.social-icons svg:nth-child(3) {
+    margin-right: 28px;
+}
 @media screen and (min-width: 376px) {
     .hero {
         background-image: url('images/desktop/image-header.jpg');
