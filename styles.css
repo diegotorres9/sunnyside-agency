@@ -277,6 +277,60 @@ nav li:nth-child(4) a {
     margin-left: 24px;
     margin-right: 24px;
 }
+/* CLIENT TESTIMONIALS BLOCK */
+.client-testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 86px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.client-testimonials .testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.client-testimonials .testimonial:nth-child(3) {
+    margin-top: 64px;
+    margin-bottom: 64px;
+}
+.client-testimonials h3 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(0.889rem, -1vw + 1.5rem, 1.111rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #A7AAAD;
+    margin-bottom: 68px;
+}
+.testimonial img {
+    border-radius: 100%;
+}
+.testimonial p {
+    text-align: center;
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #5B636D;
+    line-height: 32px;
+    padding-top: 32px;
+    padding-bottom: 28px;
+}
+.testimonial h4 {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 18px;
+    color: #24303E;
+    padding-bottom: 12px;
+}
+.testimonial .job {
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #A7AAAD;
+}
+
 @media screen and (min-width: 376px) {
     .hero {
         background-image: url('images/desktop/image-header.jpg');
