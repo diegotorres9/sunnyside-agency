@@ -1,26 +1,29 @@
 /* HEADER AND NAV STYLING */
 header {
     position: relative;
-    text-align: center;
     width: 100%;
     z-index: 999;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 header svg {
-    margin-top: 32px;
     margin-left: 24px;
+    margin-top: 1.5em;
 }
 .nav-toggle {
     display: none;
+    position: absolute !important;
+    top: -9999px !important;
+    right: -9999px !important;
 }
 .nav-toggle-label {
-    margin-top: 32px;
-    margin-right: 24px;
+    position: absolute;
+    top: 0;
+    right: 0;
     height: 100%;
     display: flex;
     align-items: center;
+    margin-right: 24px;
+    margin-top: .75em;
 }
 .nav-toggle-label span,
 .nav-toggle-label span:before,
@@ -46,35 +49,31 @@ header nav {
     position: absolute;
     text-align: left;
     top: 100%;
-    left: 0;
+    right: 0;
     transform: scale(1, 0);
     transform-origin: top;
     transition: transform 400ms ease-in-out;
+    background-color: #fff;
+    -webkit-clip-path: polygon(0 8%, 92% 8%, 100% 0%, 100% 99%, 0 100%, 0 43%);
+    clip-path: polygon(0 8%, 92% 8%, 100% 0%, 100% 99%, 0 100%, 0 43%);
+    width: 329px;
+    margin-right: 24px;
 }
 nav ul {
-    width: 329px;
-    height: 329px;
-    background-color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 0 24px 0 24px;
-    -webkit-clip-path: polygon(0 8%, 92% 8%, 100% 0%, 100% 99%, 0 100%, 0 43%);
-            clip-path: polygon(0 8%, 92% 8%, 100% 0%, 100% 99%, 0 100%, 0 43%);
+    margin: 63px 24px 33px 24px;
 }
-
 nav li {
     font-family: 'Barlow', sans-serif;
     font-size: 20px;
     color: #808397;
     font-weight: 600;
-    margin-bottom: 33px;
     opacity: 0;
     transition: opacity 150ms ease-in-out;
-}
-nav li:nth-child(1) {
-    margin-top: 63px;
+    margin-bottom: 33px;
 }
 nav li:nth-child(4) {
     width: 140px;
@@ -84,6 +83,7 @@ nav li:nth-child(4) {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 0;
 }
 nav li:nth-child(4) a {
     font-family: 'Fraunces';
@@ -124,6 +124,8 @@ nav li:nth-child(4) a {
     letter-spacing: 0.1562px;
     margin-bottom: 52px;
 }
+/* BLOCK ONE STYLING 
+    TRANSFORM YOUR BRAND & STAND OUT AUDEINCE */
 .block-one {
     display: flex;
     flex-direction: column;
@@ -146,6 +148,7 @@ nav li:nth-child(4) a {
 }
 .tfb-content p {
     font-family: 'Barlow', sans-serif;
+    font-size: 18px;
     color: #808397;
     line-height: 30px;
     text-align: center;
@@ -159,13 +162,13 @@ nav li:nth-child(4) a {
 }
 .learn-more-link.transform::after {
     content: '';
-    display: block;
+    display: flex;
     height: 10px;
     width: 127px;
     background: #FAD400;
     position: absolute;
     bottom: -8px;
-    left: 100px;
+    margin-left: -8px;
     border-radius: 28px;
     opacity: .25;
 }
@@ -187,6 +190,7 @@ nav li:nth-child(4) a {
 }
 .sta-content p {
     font-family: 'Barlow', sans-serif;
+    font-size: 18px;
     color: #808397;
     line-height: 30px;
     text-align: center;
@@ -206,7 +210,7 @@ nav li:nth-child(4) a {
     background: #FE7766;
     position: absolute;
     bottom: -8px;
-    left: 100px;
+    margin-left: -8px;
     border-radius: 28px;
     opacity: .25;
 }
@@ -219,14 +223,13 @@ nav li:nth-child(4) a {
     background-image: url('images/mobile/image-graphic-design.jpg');
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover;
+    background-size: cover; 
     position: relative;
 }
 .graphic-design .gd-content {
     text-align: center;
     position: absolute;
     bottom: 59px;
-    /* padding: 0 24px 59px 24px; */
 }
 .graphic-design .gd-content h3{
     font-family: 'Fraunces', serif;
@@ -235,6 +238,7 @@ nav li:nth-child(4) a {
     color: #24554A;
     margin-bottom: 33px;
     line-height: 34px;
+    text-transform: capitalize;
 }
 .graphic-design .gd-content p {
     font-family: 'Barlow', sans-serif;
@@ -257,7 +261,6 @@ nav li:nth-child(4) a {
     text-align: center;
     position: absolute;
     bottom: 59px;
-    /* padding: 0 24px 59px 24px; */
 }
 .photography .photo-content h3{
     font-family: 'Fraunces', serif;
@@ -384,5 +387,130 @@ footer .social-icons {
         background-position: center center;
         background-size: cover;
         height: 80vh;
+    }
+}
+@media screen and (min-width: 800px) {
+    .nav-toggle-label {
+        display: none;
+    }
+    header {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    header nav {
+        all: unset;
+        grid-column: 4 / 5;
+        justify-content: flex-end;
+    }
+    header svg {
+        align-self: center;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+    }
+    nav li {
+        opacity: 1;
+        margin: 0;
+        color: #fff;
+        margin-right: 47px;
+    }
+    nav li:nth-child(4){
+        background-color: rgba(255, 255, 255, 1);
+        transition: all 300ms ease-in;
+        margin-right: 0;
+    }
+    nav li:nth-child(4):hover {
+        background-color: rgba(255, 255, 255, .25);
+        cursor: pointer;
+    }
+    nav li:nth-child(4):hover a {
+        color: #fff;
+    }
+    .block-one {
+        display: flex;
+        flex-direction: column;
+    }
+    .transform-your-brand {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .transform-your-brand img {
+        grid-column: 2;
+        max-width: 100%;
+    }
+    .transform-your-brand .tfb-content {
+        grid-column: 1;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+    .tfb-content h2 {
+        align-self: flex-start;
+    }
+    .tfb-content a {
+        align-self: flex-start;
+    }
+    .tfb-content p {
+        text-align: left;
+    }
+    .transform-your-brand .learn-more-link.transform::after {
+        content: '';
+        display: flex;
+        height: 10px;
+        width: 127px;
+        background: #FAD400;
+        position: static;
+        bottom: 190px;
+        margin-left: -8px;
+        margin-bottom: -8px;
+        border-radius: 28px;
+        opacity: .25;
+        transition: opacity 300ms ease;
+    }
+    .learn-more-link:hover {
+        cursor: pointer;
+    }
+    .transform-your-brand .learn-more-link.transform:hover::after {
+        opacity: 1;
+    }
+    .stand-out-audience {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .sta-content {
+        margin: 0;
+    }
+    .stand-out-audience .learn-more-link.audience::after {
+        content: '';
+        display: flex;
+        height: 10px;
+        width: 127px;
+        background: #FE7766;
+        position: static;
+        bottom: 190px;
+        margin-left: -8px;
+        margin-bottom: -8px;
+        border-radius: 28px;
+        opacity: .25;
+        transition: opacity 300ms ease;
+    }
+    .stand-out-audience .learn-more-link.audience:hover::after {
+        opacity: 1;
+    }
+    .block-two {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+    }
+    .block-two .graphic-design {
+        background-image: url('images/desktop/image-graphic-design.jpg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover; 
+        position: relative;
     }
 }
