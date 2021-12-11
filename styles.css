@@ -287,7 +287,7 @@ nav li:nth-child(4) a {
     align-items: center;
     padding-top: 60px;
     padding-bottom: 86px;
-    padding-left: 24px;
+    padding-left: clamp(24px, 2vw + 1rem, 165px);
     padding-right: 24px;
 }
 .client-testimonials .testimonial {
@@ -295,17 +295,18 @@ nav li:nth-child(4) a {
     flex-direction: column;
     align-items: center;
 }
-.client-testimonials .testimonial:nth-child(3) {
+.client-testimonials .thomas-s {
     margin-top: 64px;
     margin-bottom: 64px;
 }
 .client-testimonials h3 {
     font-family: 'Fraunces', serif;
-    font-size: clamp(0.889rem, -1vw + 1.5rem, 1.111rem);
+    font-size: clamp(1rem, 4vw - 1rem, 1.25rem);
     font-weight: 900;
     text-transform: uppercase;
     color: #A7AAAD;
     margin-bottom: 68px;
+    letter-spacing: 3px;
 }
 .testimonial img {
     border-radius: 100%;
@@ -501,16 +502,65 @@ footer .social-icons {
     .stand-out-audience .learn-more-link.audience:hover::after {
         opacity: 1;
     }
+    /* DO THIS NEXT */
     .block-two {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 1fr;
     }
-    .block-two .graphic-design {
-        background-image: url('images/desktop/image-graphic-design.jpg');
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover; 
-        position: relative;
+    .client-testimonials {
+        margin: calc(155px / 2) calc(165px / 2) calc(160px / 2) calc(165px / 2);
+    }
+    footer .footer-links a:hover{
+        color: #fff;
+        cursor: pointer;
+    }
+    footer .social-icons svg {
+        cursor: pointer;
+    }
+    footer .social-icons svg:hover path {
+        fill: #fff;
     }
 }
+@media screen and (min-width: 1000px) {
+    .image-gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+    }
+    .client-testimonials {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(200px, 1fr)) ;
+        grid-template-rows: auto 1fr;
+        -moz-column-gap: 30px;
+             column-gap: 30px;
+        margin: 155px 165px 160px 165px;
+        padding: 0;
+    }
+    .client-testimonials h3 {
+        grid-row: 1;
+        grid-column: 2;
+        justify-self: center;
+        text-align: center;
+    }
+    .client-testimonials .emily-r {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .client-testimonials .thomas-s {
+        grid-column: 2;
+        grid-row: 2;
+        margin: 0;
+    }
+    .client-testimonials .jennie-f {
+        grid-column: 3;
+        grid-row: 2;
+    }
+    .client-testimonials .testimonial p {
+        padding-top: 58px;
+        padding-bottom: 65px;
+    }
+}
+/* @media screen and (min-width: 1100px) {
+
+} */
